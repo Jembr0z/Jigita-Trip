@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Itinerary — Jakarta · KL · Singapore | Aji & Anggita</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FAF8F5;--warm:#FFFDF9;--terra:#C2745A;--tl:#F5EAE4;--td:#9B5A42;--teal:#5F9EA0;--teal-l:#E8F4F4;--mauve:#9B7FB6;--mauve-l:#F0EAF8;--brn:#3D2B1F;--brn2:#7A5C4A;--mut:#A08C7D;--bdr:#EDE9E3;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:var(--brn);min-height:100vh;}
+.app-header{background:var(--warm);border-bottom:1px solid var(--bdr);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(61,43,31,.06);}
+.hi{max-width:680px;margin:0 auto;padding:16px 20px 0;}
+.ht{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px;}
+.flag{font-size:20px;margin-bottom:4px;}
+.ttl{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;}
+.sub{font-size:12px;color:var(--mut);margin-top:3px;}
+.hbadge{background:var(--tl);color:var(--td);font-size:11px;font-weight:700;padding:6px 12px;border-radius:20px;white-space:nowrap;}
+.tabs{display:flex;border-top:1px solid var(--bdr);overflow-x:auto;}
+.tabs::-webkit-scrollbar{display:none;}
+.tab{padding:11px 16px;font-size:13px;font-weight:600;color:var(--mut);border-bottom:2.5px solid transparent;cursor:pointer;transition:all .2s;white-space:nowrap;flex-shrink:0;user-select:none;}
+.tab.active{color:var(--terra);border-bottom-color:var(--terra);}
+.tab:hover:not(.active){color:var(--brn2);}
+.body{max-width:680px;margin:0 auto;padding:20px 16px 60px;}
+.page{display:none;}.page.active{display:block;}
+.sg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:12px;}
+.sc{background:var(--warm);border:1px solid var(--bdr);border-radius:14px;padding:14px 10px;text-align:center;}
+.sn{font-size:24px;font-weight:700;font-family:'Playfair Display',serif;}
+.sl{font-size:11px;color:var(--mut);margin-top:3px;font-weight:500;}
+.bc{background:var(--warm);border:1px solid var(--bdr);border-radius:14px;padding:14px 16px;text-align:center;margin-bottom:18px;}
+.bn{font-size:20px;font-weight:700;color:var(--terra);font-family:'Playfair Display',serif;}
+.bl{font-size:11px;color:var(--mut);margin-top:3px;}
+.pw{background:var(--bdr);border-radius:10px;height:6px;margin-bottom:18px;overflow:hidden;}
+.pb{height:100%;background:linear-gradient(90deg,var(--terra),#E8956E);border-radius:10px;transition:width .4s;width:0%;}
+.df{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-bottom:20px;scrollbar-width:none;}
+.df::-webkit-scrollbar{display:none;}
+.db{padding:8px 16px;border-radius:22px;font-size:12px;font-weight:700;border:1.5px solid var(--bdr);background:var(--warm);color:var(--mut);cursor:pointer;white-space:nowrap;flex-shrink:0;transition:all .2s;font-family:'Plus Jakarta Sans',sans-serif;}
+.db:hover{border-color:var(--terra);color:var(--terra);}
+.db.active{background:var(--terra);color:#fff;border-color:var(--terra);}
+.ds{margin-bottom:24px;border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(61,43,31,.07);}
+.dh{padding:14px 18px;display:flex;justify-content:space-between;align-items:flex-start;gap:12px;}
+.d1 .dh{background:var(--terra);}.d2 .dh{background:#C29050;}.d3 .dh{background:var(--teal);}.d4 .dh{background:var(--mauve);}
+.dt{font-size:14px;font-weight:700;color:#fff;line-height:1.3;}
+.ds2{font-size:11px;color:rgba(255,255,255,.75);margin-top:3px;font-style:italic;line-height:1.4;}
+.dbg{font-size:13px;font-weight:700;color:rgba(255,255,255,.9);white-space:nowrap;background:rgba(0,0,0,.12);padding:4px 10px;border-radius:10px;flex-shrink:0;}
+.dhi{padding:9px 18px;font-size:12px;font-style:italic;border-left:3px solid;}
+.d1 .dhi{background:#FFF8F5;color:var(--td);border-color:#E8A88A;}
+.d2 .dhi{background:#FFF9F0;color:#7A5A00;border-color:#E8C060;}
+.d3 .dhi{background:var(--teal-l);color:#2E6668;border-color:#7ABCBD;}
+.d4 .dhi{background:var(--mauve-l);color:#5A3A78;border-color:#B89FD0;}
+.at{background:var(--warm);}
+.ah{display:grid;grid-template-columns:32px 88px 1fr 80px;padding:8px 14px;background:#F7F4F0;border-bottom:1px solid var(--bdr);}
+.ah span{font-size:10px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.6px;}
+.ar{display:grid;grid-template-columns:32px 88px 1fr 80px;padding:11px 14px;border-bottom:1px solid #F5F0EB;align-items:start;transition:background .15s;}
+.ar:last-child{border-bottom:none;}
+.ar:hover{background:#FDFAF7;}
+.ar.done-row{opacity:.5;}
+.ar.done-row .an{text-decoration:line-through;}
+.chk{width:18px;height:18px;border-radius:5px;border:1.5px solid #D0C5BB;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;transition:all .2s;user-select:none;}
+.chk:hover{border-color:var(--terra);}
+.chk.on{background:var(--terra);border-color:var(--terra);}
+.chk.on::after{content:'✓';font-size:11px;color:#fff;font-weight:700;}
+.tm{font-size:11px;color:var(--mut);font-weight:600;line-height:1.5;padding-right:6px;}
+.an{font-size:13px;font-weight:600;color:var(--brn);line-height:1.4;margin-bottom:4px;}
+.badge{display:inline-block;padding:2px 9px;border-radius:10px;font-size:10px;font-weight:700;}
+.bh{background:#E8F2FB;color:#2A6496;}.bm{background:#FEF0E6;color:#B84A00;}.bf{background:#FBEAF0;color:#8B3060;}
+.btr{background:#EBF5EB;color:#2E6B2E;}.bw{background:#EEEDFE;color:#4A3DAA;}.bba{background:#F2F0EC;color:#4A4540;}.bbl{background:#FDF0D5;color:#7A4D00;}
+.est{font-size:12px;font-weight:700;color:var(--terra);text-align:right;line-height:1.5;}
+.est.fr{color:#2E6B2E;}.est.da{color:var(--mut);}
+.stitle{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--brn);margin:24px 0 14px;}
+.clbl{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:12px;}
+.ckl{background:#FEF0E6;color:#B84A00;}.csg{background:#E8F2FB;color:#2A6496;}
+.dc{background:var(--warm);border:1px solid var(--bdr);border-radius:14px;padding:14px 16px;margin-bottom:10px;display:flex;align-items:flex-start;gap:14px;}
+.di{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.di.kl{background:#FEF0E6;}.di.sg{background:#E8F2FB;}
+.dn{font-size:14px;font-weight:700;color:var(--brn);margin-bottom:3px;}
+.dd{font-size:12px;color:var(--mut);line-height:1.5;}
+.dm{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap;align-items:center;}
+.dtag{font-size:10px;font-weight:700;padding:2px 8px;border-radius:8px;background:var(--cream);color:var(--brn2);border:1px solid var(--bdr);}
+.dtag.fr{background:#EBF5EB;color:#2E6B2E;border-color:#C0DEC0;}
+.dday{font-size:10px;font-weight:700;color:var(--mut);white-space:nowrap;margin-left:auto;flex-shrink:0;}
+.ot{background:var(--warm);border:1px solid var(--bdr);border-radius:14px;overflow:hidden;margin-bottom:20px;}
+.oh{display:grid;grid-template-columns:1fr 120px;padding:8px 14px;background:#F7F4F0;border-bottom:1px solid var(--bdr);}
+.oh span{font-size:10px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.6px;}
+.or{display:grid;grid-template-columns:1fr 120px;padding:11px 14px;border-bottom:1px solid #F5F0EB;align-items:start;}
+.or:last-child{border-bottom:none;}.or:hover{background:#FDFAF7;}
+.on2{font-size:13px;font-weight:600;color:var(--brn);margin-bottom:3px;}
+.ono{font-size:11px;color:var(--mut);line-height:1.4;}
+.op{font-size:12px;font-weight:700;color:var(--terra);text-align:right;}
+.tip{background:var(--tl);border-left:3px solid var(--terra);border-radius:0 10px 10px 0;padding:10px 14px;font-size:12px;color:var(--td);line-height:1.6;margin-bottom:20px;}
+.footer{text-align:center;margin-top:32px;padding-top:20px;border-top:1px solid var(--bdr);font-size:12px;color:var(--mut);}
+.footer strong{color:var(--terra);}
+@media(max-width:520px){
+  .ah,.ar{grid-template-columns:28px 70px 1fr 64px;}
+  .an{font-size:12px;}.tm{font-size:10px;}.ttl{font-size:17px;}.tab{padding:11px 12px;font-size:12px;}
+}
+</style>
+</head>
+<body>
+
+<div class="app-header">
+  <div class="hi">
+    <div class="ht">
+      <div>
+        <div class="flag">🇮🇩 ✈️ 🇲🇾 ✈️ 🇸🇬</div>
+        <div class="ttl">Jakarta · KL · Singapore</div>
+        <div class="sub">28 – 31 Mei 2026 &nbsp;·&nbsp; 4 Hari 3 Malam</div>
+      </div>
+      <div class="hbadge">💑 Aji & Anggita</div>
+    </div>
+    <div class="tabs">
+      <div class="tab active" onclick="switchTab(0)">📅 Itinerary</div>
+      <div class="tab" onclick="switchTab(1)">📍 Destinasi</div>
+      <div class="tab" onclick="switchTab(2)">🛍️ Oleh-oleh</div>
+      <div class="tab" onclick="switchTab(3)">💰 Biaya</div>
+    </div>
+  </div>
+</div>
+
+<div class="body">
+
+<!-- PAGE 0: ITINERARY -->
+<div class="page active" id="page-0">
+  <div class="sg">
+    <div class="sc"><div class="sn">4</div><div class="sl">Hari</div></div>
+    <div class="sc"><div class="sn">28</div><div class="sl">Aktivitas</div></div>
+    <div class="sc"><div class="sn" id="done-count">0</div><div class="sl">Selesai ✓</div></div>
+  </div>
+  <div class="bc"><div class="bn">Rp 2.800.000 – 5.300.000</div><div class="bl">Est. Total (diluar tiket pesawat & hotel)</div></div>
+  <div class="pw"><div class="pb" id="progress-bar"></div></div>
+  <div class="df">
+    <button class="db active" onclick="filterDay('all',this)">Semua</button>
+    <button class="db" onclick="filterDay('d1',this)">D1 · Jakarta→KL</button>
+    <button class="db" onclick="filterDay('d2',this)">D2 · KL→SG</button>
+    <button class="db" onclick="filterDay('d3',this)">D3 · SG Full Day</button>
+    <button class="db" onclick="filterDay('d4',this)">D4 · Pulang</button>
+  </div>
+
+  <div class="ds d1" data-day="d1">
+    <div class="dh"><div><div class="dt">Day 1 | Kamis, 28 Mei · Jakarta → Kuala Lumpur</div><div class="ds2">MH 710 · CGK 11:10 → KUL 14:20 · Menginap: StarQ Hotel, Bukit Bintang</div></div><div class="dbg">±Rp 700rb</div></div>
+    <div class="dhi">💡 Bangun 04:30 · tiba CGK jam 08:00 · malam jalan kaki ke KLCC golden hour</div>
+    <div class="at">
+      <div class="ah"><span></span><span>Waktu</span><span>Kegiatan</span><span>Est. Biaya</span></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">04:30–08:00</div><div><div class="an">Berangkat ke Bandara Soekarno-Hatta</div><span class="badge btr">Transport</span></div><div class="est">Rp 200rb</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">08:00–10:30</div><div><div class="an">Check-in bagasi, imigrasi & santai di CGK</div><span class="badge bba">Bandara</span></div><div class="est da">—</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">11:10–14:20</div><div><div class="an">Penerbangan MH 710 · CGK → KUL</div><span class="badge bba">Bandara</span></div><div class="est da">—</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">14:20–15:30</div><div><div class="an">Imigrasi, ambil bagasi & tukar uang MYR</div><span class="badge bba">Bandara</span></div><div class="est da">—</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">15:30–16:30</div><div><div class="an">KLIA Transit → KL Sentral → Monorail Bukit Bintang</div><span class="badge btr">Transport</span></div><div class="est">Rp 115rb</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">16:30–17:00</div><div><div class="an">Check-in StarQ Hotel, Jln Bukit Bintang</div><span class="badge bh">Hotel</span></div><div class="est da">—</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">17:00–18:00</div><div><div class="an">Jalan sore & foto di Pavilion KL</div><span class="badge bf">Foto</span></div><div class="est fr">Gratis</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">18:00–18:45</div><div><div class="an">Jalan kaki ke KLCC Park (~2,5 km, 35 menit)</div><span class="badge btr">Jalan kaki</span></div><div class="est fr">Gratis</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">18:45–20:30</div><div><div class="an">Foto golden hour & malam Petronas Twin Towers</div><span class="badge bf">Foto</span></div><div class="est fr">Gratis</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">20:30–22:00</div><div><div class="an">Makan malam di Suria KLCC / Nasi Lemak Wanjo</div><span class="badge bm">Makan</span></div><div class="est">Rp 107–178rb</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">22:00–23:30</div><div><div class="an">Jalan kaki pulang ke hotel</div><span class="badge btr">Jalan kaki</span></div><div class="est fr">Gratis</div></div>
+    </div>
+  </div>
+
+  <div class="ds d2" data-day="d2">
+    <div class="dh"><div><div class="dt">Day 2 | Jumat, 29 Mei · KL → Singapore</div><div class="ds2">MH 603 · KUL 11:45 → SIN 12:55 · Menginap: Oxford Hotel, Bugis</div></div><div class="dbg">±Rp 900rb</div></div>
+    <div class="dhi">💡 Sarapan di Jalan Alor pagi · checkout 08:30 · Grab ke KLIA2 · tiba Changi langsung ke Jewel</div>
+    <div class="at">
+      <div class="ah"><span></span><span>Waktu</span><span>Kegiatan</span><span>Est. Biaya</span></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">07:00–08:00</div><div><div class="an">Sarapan di Jalan Alor Food Street</div><span class="badge bm">Makan</span></div><div class="est">Rp 89–143rb</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">08:00–08:30</div><div><div class="an">Foto di Bintang Walk & check-out hotel</div><span class="badge bf">Foto</span></div><div class="est fr">Gratis</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">08:40–09:30</div><div><div class="an">Grab ke KLIA2</div><span class="badge btr">Transport</span></div><div class="est">Rp 125–160rb</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">09:30–11:45</div><div><div class="an">Check-in bagasi & imigrasi di KLIA2</div><span class="badge bba">Bandara</span></div><div class="est da">—</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">11:45–12:55</div><div><div class="an">Penerbangan MH 603 · KUL → SIN</div><span class="badge bba">Bandara</span></div><div class="est da">—</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">13:00–14:00</div><div><div class="an">Imigrasi, ambil bagasi & tukar SGD</div><span class="badge bba">Bandara</span></div><div class="est da">—</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">14:00–15:00</div><div><div class="an">Foto Rain Vortex di Jewel Changi & makan siang</div><span class="badge bf">Foto</span></div><div class="est">Rp 240–360rb</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">15:00–15:30</div><div><div class="an">MRT Changi → Bugis Station</div><span class="badge btr">Transport</span></div><div class="est">Rp 60rb</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">15:30–17:00</div><div><div class="an">Check-in Oxford Hotel, 218 Queen Street, Bugis</div><span class="badge bh">Hotel</span></div><div class="est da">—</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">17:00–19:30</div><div><div class="an">Foto di Haji Lane & Masjid Sultan, Kampong Glam</div><span class="badge bf">Foto</span></div><div class="est fr">Gratis</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">19:30–20:00</div><div><div class="an">Belanja di Bugis Street & Bugis Junction</div><span class="badge bbl">Belanja</span></div><div class="est">Rp 360–600rb</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">20:00–22:00</div><div><div class="an">Makan malam di Lau Pa Sat / Maxwell Food Centre</div><span class="badge bm">Makan</span></div><div class="est">Rp 180–300rb</div></div>
+    </div>
+  </div>
+
+  <div class="ds d3" data-day="d3">
+    <div class="dh"><div><div class="dt">Day 3 | Sabtu, 30 Mei · Singapore Full Day</div><div class="ds2">Hari spot foto romantis seharian · Menginap: Oxford Hotel, Bugis</div></div><div class="dbg">±Rp 1.200rb</div></div>
+    <div class="dhi">💡 Hari paling padat · pakai sepatu nyaman · bawa powerbank & tripod mini!</div>
+    <div class="at">
+      <div class="ah"><span></span><span>Waktu</span><span>Kegiatan</span><span>Est. Biaya</span></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">07:30–09:00</div><div><div class="an">Sarapan Ya Kun Kaya Toast — kopi + roti kaya</div><span class="badge bm">Makan</span></div><div class="est">Rp 120–180rb</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">09:00–11:00</div><div><div class="an">Foto di Henderson Waves & Forest Walk</div><span class="badge bf">Foto</span></div><div class="est fr">Gratis</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">11:00–11:30</div><div><div class="an">MRT HarbourFront + Sentosa Express</div><span class="badge btr">Transport</span></div><div class="est">Rp 96rb</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">11:30–12:00</div><div><div class="an">Foto di USS Globe, Resorts World Sentosa</div><span class="badge bf">Foto</span></div><div class="est fr">Gratis</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">12:00–14:00</div><div><div class="an">Foto & santai di Palawan Beach + makan siang</div><span class="badge bw">Wisata</span></div><div class="est">Rp 240–360rb</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">14:00–16:30</div><div><div class="an">Foto di Chinatown, Ann Siang Hill & Buddha Temple</div><span class="badge bf">Foto</span></div><div class="est fr">Gratis</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">16:30–18:30</div><div><div class="an">Kembali hotel — istirahat & bersiap malam romantis</div><span class="badge bh">Hotel</span></div><div class="est da">—</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">18:30–20:30</div><div><div class="an">Foto Merlion Park, Helix Bridge & ArtScience Museum</div><span class="badge bf">Foto</span></div><div class="est fr">Gratis</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">20:45</div><div><div class="an">OCBC Garden Rhapsody Show — Supertree Grove</div><span class="badge bw">Wisata</span></div><div class="est fr">Gratis</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">22:00–23:30</div><div><div class="an">Makan malam romantis di Clarke Quay</div><span class="badge bm">Makan</span></div><div class="est">Rp 420–1.200rb</div></div>
+    </div>
+  </div>
+
+  <div class="ds d4" data-day="d4">
+    <div class="dh"><div><div class="dt">Day 4 | Minggu, 31 Mei · Singapore → Jakarta</div><div class="ds2">8B 154 · SIN 15:30 → CGK 16:20 · Hari kepulangan</div></div><div class="dbg">±Rp 700rb</div></div>
+    <div class="dhi">💡 Checkout 11:30 · MRT ke Changi · tiba airport 12:20 · jangan sampai ketinggalan!</div>
+    <div class="at">
+      <div class="ah"><span></span><span>Waktu</span><span>Kegiatan</span><span>Est. Biaya</span></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">08:00–09:00</div><div><div class="an">Sarapan terakhir di Ya Kun Kaya Toast / Toast Box</div><span class="badge bm">Makan</span></div><div class="est">Rp 120–180rb</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">09:00–11:00</div><div><div class="an">Last-minute shopping di Bugis Street</div><span class="badge bbl">Belanja</span></div><div class="est">Rp 360–600rb</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">11:00–11:30</div><div><div class="an">Packing & check-out Oxford Hotel</div><span class="badge bh">Hotel</span></div><div class="est da">—</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">11:40–12:20</div><div><div class="an">MRT Bugis → Tanah Merah → Changi Airport</div><span class="badge btr">Transport</span></div><div class="est">Rp 60rb</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">12:20–13:30</div><div><div class="an">Check-in bagasi & imigrasi Changi</div><span class="badge bba">Bandara</span></div><div class="est da">—</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">13:30–15:00</div><div><div class="an">Jalan-jalan di Jewel Changi & duty free</div><span class="badge bbl">Belanja</span></div><div class="est">Rp 240–480rb</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">15:30–16:20</div><div><div class="an">Penerbangan 8B 154 · SIN → CGK</div><span class="badge bba">Bandara</span></div><div class="est da">—</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">17:00</div><div><div class="an">Tiba di Jakarta — pulang ke rumah 🥰</div><span class="badge btr">Transport</span></div><div class="est">Rp 200rb</div></div>
+    </div>
+  </div>
+  <div class="footer">Made with ❤️ by <strong>Jigita</strong> with Claude</div>
+</div>
+
+<!-- PAGE 1: DESTINASI -->
+<div class="page" id="page-1">
+  <div class="stitle">📍 Semua Destinasi</div>
+  <div class="clbl ckl">🇲🇾 Kuala Lumpur</div>
+  <div class="dc"><div class="di kl">🏙️</div><div style="flex:1"><div class="dn">Pavilion KL & Bukit Bintang</div><div class="dd">Pusat perbelanjaan ikonik KL. Foto sore hari dengan arsitektur megah sebagai latar.</div><div class="dm"><span class="dtag fr">Gratis</span><span class="dtag">Jalan kaki dari hotel</span><span class="dday">D1 · 17:00</span></div></div></div>
+  <div class="dc"><div class="di kl">🌃</div><div style="flex:1"><div class="dn">Petronas Twin Towers & KLCC Park</div><div class="dd">Spot foto paling ikonik KL! Golden hour dan malam adalah waktu terbaik. Air mancur KLCC sangat romantis untuk foto berdua.</div><div class="dm"><span class="dtag fr">Gratis masuk</span><span class="dtag">Jalan kaki ~2,5 km</span><span class="dday">D1 · 18:45</span></div></div></div>
+  <div class="dc"><div class="di kl">🍜</div><div style="flex:1"><div class="dn">Jalan Alor Food Street</div><div class="dd">Surga street food KL! Pagi hari lebih sepi. Wajib coba Ayam Bakar Wong Ah Wah & Durian Crepe.</div><div class="dm"><span class="dtag">±Rp 89–143rb/berdua</span><span class="dtag">~5 mnt dari hotel</span><span class="dday">D2 · 07:00</span></div></div></div>
+  <div style="height:16px"></div>
+  <div class="clbl csg">🇸🇬 Singapore</div>
+  <div class="dc"><div class="di sg">💎</div><div style="flex:1"><div class="dn">Jewel Changi Airport</div><div class="dd">Rain Vortex setinggi 40 meter — langsung bisa dikunjungi saat tiba di Changi.</div><div class="dm"><span class="dtag fr">Gratis masuk</span><span class="dtag">Dalam terminal</span><span class="dday">D2 · 14:00</span></div></div></div>
+  <div class="dc"><div class="di sg">🕌</div><div style="flex:1"><div class="dn">Haji Lane & Masjid Sultan</div><div class="dd">Lorong penuh mural warna-warni dan kafe instagramable. Golden dome Masjid Sultan cantik untuk foto.</div><div class="dm"><span class="dtag fr">Gratis masuk</span><span class="dtag">~10 mnt dari hotel</span><span class="dday">D2 · 17:00</span></div></div></div>
+  <div class="dc"><div class="di sg">🌿</div><div style="flex:1"><div class="dn">Henderson Waves & Forest Walk</div><div class="dd">Jembatan kayu ikonik tertinggi di Singapore (36m). Walkway di atas pohon yang estetik dan romantis.</div><div class="dm"><span class="dtag fr">Gratis</span><span class="dtag">MRT ke HarbourFront</span><span class="dday">D3 · 09:00</span></div></div></div>
+  <div class="dc"><div class="di sg">🎡</div><div style="flex:1"><div class="dn">USS Globe — Resorts World Sentosa</div><div class="dd">Globe biru ikonik di pintu masuk USS. Spot foto wajib tanpa perlu beli tiket masuk!</div><div class="dm"><span class="dtag fr">Gratis</span><span class="dtag">Sentosa Express</span><span class="dday">D3 · 11:30</span></div></div></div>
+  <div class="dc"><div class="di sg">🏖️</div><div style="flex:1"><div class="dn">Palawan Beach, Sentosa</div><div class="dd">Pantai berpasir putih yang tenang. Ada Pirate Ship dan jembatan gantung ke southernmost point of Asia.</div><div class="dm"><span class="dtag fr">Gratis masuk</span><span class="dtag">~15 mnt dari USS Globe</span><span class="dday">D3 · 12:00</span></div></div></div>
+  <div class="dc"><div class="di sg">🏛️</div><div style="flex:1"><div class="dn">Chinatown & Ann Siang Hill</div><div class="dd">Ornamen merah dan lantern yang colorful. Ann Siang Hill adalah taman tersembunyi yang tenang dan estetik.</div><div class="dm"><span class="dtag fr">Gratis masuk</span><span class="dtag">MRT Chinatown</span><span class="dday">D3 · 14:00</span></div></div></div>
+  <div class="dc"><div class="di sg">🦁</div><div style="flex:1"><div class="dn">Merlion Park & Marina Bay</div><div class="dd">Foto ikonik Singapore! Merlion + Marina Bay Sands. Helix Bridge sangat fotogenik di malam hari.</div><div class="dm"><span class="dtag fr">Gratis masuk</span><span class="dtag">Grab dari hotel</span><span class="dday">D3 · 18:30</span></div></div></div>
+  <div class="dc"><div class="di sg">✨</div><div style="flex:1"><div class="dn">Supertree Grove — Gardens by the Bay</div><div class="dd">Supertree bercahaya di malam hari + OCBC Garden Rhapsody show GRATIS jam 19:45 & 20:45.</div><div class="dm"><span class="dtag fr">Show gratis!</span><span class="dtag">~10 mnt dari Merlion</span><span class="dday">D3 · 20:45</span></div></div></div>
+  <div class="dc"><div class="di sg">🌉</div><div style="flex:1"><div class="dn">Clarke Quay</div><div class="dd">Area riverside dengan lampu warna-warni. Pilihan makan malam romantis di tepi sungai.</div><div class="dm"><span class="dtag">±Rp 420rb–1,2jt/berdua</span><span class="dtag">~10 mnt dari GBTB</span><span class="dday">D3 · 22:00</span></div></div></div>
+  <div class="footer">Made with ❤️ by <strong>Jigita</strong> with Claude</div>
+</div>
+
+<!-- PAGE 2: OLEH-OLEH -->
+<div class="page" id="page-2">
+  <div class="stitle">🛍️ Panduan Oleh-oleh</div>
+  <div class="clbl ckl">🇲🇾 Kuala Lumpur</div>
+  <div class="tip">💡 <strong>Beli di mana?</strong> Jalan Alor (pagi D2) atau Petaling Street — bisa ditawar sampai 30–50%!</div>
+  <div class="ot">
+    <div class="oh"><span>Makanan & Minuman</span><span>Est. Harga</span></div>
+    <div class="or"><div><div class="on2">Beryl's Chocolate (kotak besar)</div><div class="ono">Cokelat khas Malaysia, beli di supermarket lebih murah!</div></div><div class="op">Rp 54–89rb</div></div>
+    <div class="or"><div><div class="on2">Old Town White Coffee sachet</div><div class="ono">Kopi 3-in-1 paling populer dari KL</div></div><div class="op">Rp 36–64rb</div></div>
+    <div class="or"><div><div class="on2">Teh Tarik sachet</div><div class="ono">Teh susu khas Malaysia, enak dan mudah dibawa</div></div><div class="op">Rp 28–43rb</div></div>
+    <div class="or"><div><div class="on2">Bakkwa / Dendeng daging</div><div class="ono">Wajib beli! Harga di Petaling Street lebih murah</div></div><div class="op">Rp 71–125rb</div></div>
+    <div class="or"><div><div class="on2">Keropok & Muruku snack pack</div><div class="ono">Camilan ringan, harga terjangkau</div></div><div class="op">Rp 18–43rb</div></div>
+  </div>
+  <div class="ot">
+    <div class="oh"><span>Souvenir</span><span>Est. Harga</span></div>
+    <div class="or"><div><div class="on2">Gantungan kunci Petronas / KL Tower</div><div class="ono">Beli di Petaling Street, bisa ditawar!</div></div><div class="op">Rp 11–28rb</div></div>
+    <div class="or"><div><div class="on2">Magnet kulkas Petronas</div><div class="ono">Ringan & murah, cocok beli banyak untuk keluarga</div></div><div class="op">Rp 18–36rb</div></div>
+    <div class="or"><div><div class="on2">Kaos / Baju bertuliskan KL Malaysia</div><div class="ono">Beli di Petaling Street, kualitas oke harga hemat</div></div><div class="op">Rp 54–89rb</div></div>
+    <div class="or"><div><div class="on2">Dompet / tas batik Malaysia</div><div class="ono">Unik & autentik, cocok untuk hadiah</div></div><div class="op">Rp 36–107rb</div></div>
+  </div>
+  <div style="height:8px"></div>
+  <div class="clbl csg">🇸🇬 Singapore</div>
+  <div class="tip">💡 <strong>Beli di mana?</strong> <strong>Bugis Street</strong> (D2 & D4) untuk harga termurah. Makanan premium beli di <strong>Changi Airport</strong> saat kepulangan!</div>
+  <div class="ot">
+    <div class="oh"><span>Makanan & Minuman</span><span>Est. Harga</span></div>
+    <div class="or"><div><div class="on2">Bengawan Solo Pandan Cake</div><div class="ono">Kue pandan khas SG — WAJIB beli! Ada di Changi Airport.</div></div><div class="op">Rp 120–216rb</div></div>
+    <div class="or"><div><div class="on2">Milo Singapore (kaleng/sachet)</div><div class="ono">Milo SG rasanya beda dari Indonesia</div></div><div class="op">Rp 60–120rb</div></div>
+    <div class="or"><div><div class="on2">Kaya Jam (selai kaya)</div><div class="ono">Selai khas SG, beli di supermarket NTUC</div></div><div class="op">Rp 48–96rb</div></div>
+    <div class="or"><div><div class="on2">Bakkwa Bee Cheng Hiang</div><div class="ono">Bakkwa premium Singapore, kualitas beda level!</div></div><div class="op">Rp 240–480rb</div></div>
+    <div class="or"><div><div class="on2">Hainanese Chicken Rice paste</div><div class="ono">Bisa masak nasi ayam ala SG di rumah!</div></div><div class="op">Rp 48–96rb</div></div>
+    <div class="or"><div><div class="on2">TWG Tea mini pack</div><div class="ono">Teh premium khas SG, cocok untuk hadiah elegan</div></div><div class="op">Rp 120–180rb</div></div>
+  </div>
+  <div class="ot">
+    <div class="oh"><span>Souvenir</span><span>Est. Harga</span></div>
+    <div class="or"><div><div class="on2">Gantungan kunci Merlion</div><div class="ono">Paling ikonik! Beli di Bugis Street jauh lebih murah</div></div><div class="op">Rp 24–60rb</div></div>
+    <div class="or"><div><div class="on2">Magnet kulkas Merlion / Marina Bay</div><div class="ono">Ringan & murah, cocok dibeli banyak</div></div><div class="op">Rp 36–72rb</div></div>
+    <div class="or"><div><div class="on2">Kaos / Baju bertuliskan Singapore</div><div class="ono">Beli di Bugis Street, banyak pilihan desain</div></div><div class="op">Rp 120–216rb</div></div>
+    <div class="or"><div><div class="on2">Tiger Balm (salep/plester)</div><div class="ono">Produk ikonik SG, berguna & unik sebagai oleh-oleh</div></div><div class="op">Rp 60–120rb</div></div>
+    <div class="or"><div><div class="on2">Tote bag / Pouch Singapore souvenir</div><div class="ono">Desain kekinian, cocok untuk hadiah teman kantor</div></div><div class="op">Rp 60–144rb</div></div>
+  </div>
+  <div class="bc"><div class="bn">Rp 540rb – 1.734.000</div><div class="bl">Est. Total Budget Oleh-oleh (KL + Singapore)</div></div>
+  <div class="footer">Made with ❤️ by <strong>Jigita</strong> with Claude</div>
+</div>
+
+<!-- PAGE 3: BIAYA -->
+<div class="page" id="page-3">
+  <div class="stitle">💰 Rincian Biaya Perjalanan</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">
+    <div class="sc"><div class="sn" style="font-size:18px;color:var(--terra);">Rp 2,8jt</div><div class="sl">Est. Minimum</div></div>
+    <div class="sc"><div class="sn" style="font-size:18px;color:var(--terra);">Rp 5,3jt</div><div class="sl">Est. Maksimum</div></div>
+  </div>
+  <div class="bc" style="margin-bottom:6px;"><div class="bn">Rp 2.800.000 – 5.300.000</div><div class="bl">Total estimasi (diluar tiket pesawat & hotel)</div></div>
+  <div class="tip" style="margin-bottom:20px;">⚠️ Tiket pesawat & hotel tidak termasuk karena sudah dibeli. Kurs: MYR ≈ Rp 3.560 · SGD ≈ Rp 12.000</div>
+
+  <div class="ot" style="margin-bottom:6px;">
+    <div class="oh" style="background:#F5EAE4;"><span style="color:var(--td);">📅 Day 1 — Jakarta → Kuala Lumpur</span><span style="color:var(--td);">Est. Biaya</span></div>
+    <div class="or"><div><div class="on2">Grab/Taxi ke Bandara CGK</div><div class="ono">Dari rumah ke Soekarno-Hatta</div></div><div class="op">Rp 150–250rb</div></div>
+    <div class="or"><div><div class="on2">Camilan & kopi di Bandara CGK</div><div class="ono">Jajan sambil menunggu boarding</div></div><div class="op">Rp 50–100rb</div></div>
+    <div class="or"><div><div class="on2">Tukar uang MYR (±MYR 200)</div><div class="ono">Untuk kebutuhan selama di KL</div></div><div class="op">Rp 712rb</div></div>
+    <div class="or"><div><div class="on2">KLIA Transit + Monorail ke Bukit Bintang</div><div class="ono">MYR 13,60 + MYR 2,50 per orang × 2</div></div><div class="op">Rp 115rb</div></div>
+    <div class="or"><div><div class="on2">Makan malam di KLCC / Nasi Lemak Wanjo</div><div class="ono">Pilihan food court atau warung sekitar KLCC</div></div><div class="op">Rp 107–178rb</div></div>
+    <div class="or" style="background:#FFF8F5;"><div><div class="on2" style="color:var(--terra);">Total Day 1</div></div><div class="op" style="font-size:13px;">Rp 534 – 655rb</div></div>
+  </div>
+  <div class="tip" style="margin-bottom:20px;">💡 Pavilion KL, KLCC Park & Petronas Twin Towers semuanya GRATIS!</div>
+
+  <div class="ot" style="margin-bottom:6px;">
+    <div class="oh" style="background:#FFF9F0;"><span style="color:#7A5A00;">📅 Day 2 — KL → Singapore</span><span style="color:#7A5A00;">Est. Biaya</span></div>
+    <div class="or"><div><div class="on2">Sarapan di Jalan Alor Food Street</div><div class="ono">Ayam Bakar Wong Ah Wah, Durian Crepe, dll</div></div><div class="op">Rp 89–143rb</div></div>
+    <div class="or"><div><div class="on2">Grab ke KLIA2</div><div class="ono">Dari StarQ Hotel Bukit Bintang ke KLIA2</div></div><div class="op">Rp 125–160rb</div></div>
+    <div class="or"><div><div class="on2">Tukar uang SGD (±SGD 250)</div><div class="ono">Untuk kebutuhan 3 hari di Singapore</div></div><div class="op">Rp 3.000rb</div></div>
+    <div class="or"><div><div class="on2">Makan siang di Jewel Changi</div><div class="ono">A&W atau food court Jewel</div></div><div class="op">Rp 240–360rb</div></div>
+    <div class="or"><div><div class="on2">MRT Changi → Bugis (SGD 2,50/org × 2)</div><div class="ono">Dari Changi Airport ke hotel</div></div><div class="op">Rp 60rb</div></div>
+    <div class="or"><div><div class="on2">Belanja di Bugis Street (opsional)</div><div class="ono">Baju, aksesoris, oleh-oleh awal</div></div><div class="op">Rp 360–600rb</div></div>
+    <div class="or"><div><div class="on2">Makan malam Hawker Center</div><div class="ono">Lau Pa Sat / Maxwell Food Centre</div></div><div class="op">Rp 180–300rb</div></div>
+    <div class="or" style="background:#FFF9F0;"><div><div class="on2" style="color:#7A5A00;">Total Day 2</div></div><div class="op" style="font-size:13px;">Rp 754 – 1.023rb</div></div>
+  </div>
+  <div class="tip" style="margin-bottom:20px;border-color:#E8C060;background:#FFF9F0;color:#7A5A00;">💡 Rain Vortex, Haji Lane & Masjid Sultan semuanya GRATIS. Pengeluaran terbesar adalah tukar SGD untuk 3 hari ke depan.</div>
+
+  <div class="ot" style="margin-bottom:6px;">
+    <div class="oh" style="background:var(--teal-l);"><span style="color:#2E6668;">📅 Day 3 — Singapore Full Day</span><span style="color:#2E6668;">Est. Biaya</span></div>
+    <div class="or"><div><div class="on2">Sarapan Ya Kun Kaya Toast</div><div class="ono">Kopi + roti kaya + soft-boiled egg</div></div><div class="op">Rp 120–180rb</div></div>
+    <div class="or"><div><div class="on2">MRT ke HarbourFront + Sentosa Express</div><div class="ono">SGD 2 + SGD 4 per orang × 2</div></div><div class="op">Rp 144rb</div></div>
+    <div class="or"><div><div class="on2">Makan siang di Sentosa</div><div class="ono">Kafe atau warung sekitar Palawan Beach</div></div><div class="op">Rp 240–360rb</div></div>
+    <div class="or"><div><div class="on2">MRT HarbourFront ke Chinatown (SGD 1,5 × 2)</div><div class="ono">Lanjut ke area Chinatown siang hari</div></div><div class="op">Rp 36rb</div></div>
+    <div class="or"><div><div class="on2">Kopi sore di Chinatown</div><div class="ono">Tong Heng atau kedai kopi khas Chinatown</div></div><div class="op">Rp 96–144rb</div></div>
+    <div class="or"><div><div class="on2">Grab ke Merlion Park malam (SGD 10–15)</div><div class="ono">Dari Oxford Hotel ke Marina Bay area</div></div><div class="op">Rp 120–180rb</div></div>
+    <div class="or"><div><div class="on2">OCBC Skyway opsional (SGD 14/org × 2)</div><div class="ono">Walkway di atas Supertree Grove</div></div><div class="op">Rp 336rb</div></div>
+    <div class="or"><div><div class="on2">Makan malam Clarke Quay</div><div class="ono">Hemat: The Boathouse / Spesial: Jumbo Seafood</div></div><div class="op">Rp 420–1.200rb</div></div>
+    <div class="or" style="background:var(--teal-l);"><div><div class="on2" style="color:#2E6668;">Total Day 3</div></div><div class="op" style="font-size:13px;">Rp 812 – 2.244rb</div></div>
+  </div>
+  <div class="tip" style="margin-bottom:20px;border-color:#7ABCBD;background:var(--teal-l);color:#2E6668;">💡 Henderson Waves, USS Globe, Chinatown, Merlion Park & Garden Rhapsody Show semuanya GRATIS. Makan malam Clarke Quay bisa disesuaikan budget!</div>
+
+  <div class="ot" style="margin-bottom:6px;">
+    <div class="oh" style="background:var(--mauve-l);"><span style="color:#5A3A78;">📅 Day 4 — Singapore → Jakarta</span><span style="color:#5A3A78;">Est. Biaya</span></div>
+    <div class="or"><div><div class="on2">Sarapan Ya Kun / Toast Box</div><div class="ono">Sarapan terakhir di Singapore</div></div><div class="op">Rp 120–180rb</div></div>
+    <div class="or"><div><div class="on2">Belanja oleh-oleh di Bugis Street</div><div class="ono">Souvenir, baju, snack untuk dibawa pulang</div></div><div class="op">Rp 360–600rb</div></div>
+    <div class="or"><div><div class="on2">MRT Bugis → Changi (SGD 2,50 × 2)</div><div class="ono">Dari hotel ke Changi Airport</div></div><div class="op">Rp 60rb</div></div>
+    <div class="or"><div><div class="on2">Duty free & belanja Changi Airport</div><div class="ono">Bengawan Solo, Bakkwa, cokelat, parfum</div></div><div class="op">Rp 240–480rb</div></div>
+    <div class="or"><div><div class="on2">Grab dari CGK ke rumah</div><div class="ono">Dari Bandara Soekarno-Hatta pulang</div></div><div class="op">Rp 150–250rb</div></div>
+    <div class="or" style="background:var(--mauve-l);"><div><div class="on2" style="color:#5A3A78;">Total Day 4</div></div><div class="op" style="font-size:13px;">Rp 570 – 1.190rb</div></div>
+  </div>
+
+  <div style="background:var(--warm);border:2px solid var(--terra);border-radius:16px;padding:18px 16px;margin:8px 0 20px;">
+    <div style="font-size:11px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">Rekapitulasi Total</div>
+    <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--bdr);font-size:13px;"><span style="color:var(--brn2);">📅 Day 1 — Jakarta → KL</span><span style="font-weight:700;">Rp 534 – 655rb</span></div>
+    <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--bdr);font-size:13px;"><span style="color:var(--brn2);">📅 Day 2 — KL → Singapore</span><span style="font-weight:700;">Rp 754 – 1.023rb</span></div>
+    <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--bdr);font-size:13px;"><span style="color:var(--brn2);">📅 Day 3 — Singapore Full Day</span><span style="font-weight:700;">Rp 812 – 2.244rb</span></div>
+    <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--bdr);font-size:13px;"><span style="color:var(--brn2);">📅 Day 4 — Singapore → Jakarta</span><span style="font-weight:700;">Rp 570 – 1.190rb</span></div>
+    <div style="display:flex;justify-content:space-between;padding:12px 0 0;font-size:15px;"><span style="font-weight:700;color:var(--terra);">TOTAL KESELURUHAN</span><span style="font-weight:700;color:var(--terra);font-size:16px;">Rp 2,8jt – 5,1jt</span></div>
+  </div>
+
+  <div class="ot" style="margin-bottom:20px;">
+    <div class="oh"><span>📝 Tidak Termasuk Estimasi</span><span></span></div>
+    <div class="or"><div><div class="on2">Tiket Pesawat (MH 710, MH 603, 8B 154)</div><div class="ono">PNR F69AIU & 19L62L</div></div><div class="op" style="color:var(--mut);">✓ Lunas</div></div>
+    <div class="or"><div><div class="on2">StarQ Hotel KL (1 malam)</div><div class="ono">Bukit Bintang · 28–29 Mei</div></div><div class="op" style="color:var(--mut);">✓ Lunas</div></div>
+    <div class="or"><div><div class="on2">Oxford Hotel Singapore (2 malam)</div><div class="ono">Bugis · 29–31 Mei</div></div><div class="op" style="color:var(--mut);">✓ Lunas</div></div>
+    <div class="or"><div><div class="on2">Bagasi pesawat (25kg & 20kg per orang)</div><div class="ono">Sudah termasuk dalam tiket</div></div><div class="op" style="color:var(--mut);">✓ Lunas</div></div>
+  </div>
+
+  <div class="footer">Made with ❤️ by <strong>Jigita</strong> with Claude</div>
+</div>
+
+</div>
+
+<script>
+const TOTAL = 28;
+function switchTab(idx) {
+  document.querySelectorAll('.tab').forEach((t,i) => t.classList.toggle('active', i===idx));
+  document.querySelectorAll('.page').forEach((p,i) => p.classList.toggle('active', i===idx));
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+function tick(el) {
+  el.classList.toggle('on');
+  el.closest('.ar').classList.toggle('done-row', el.classList.contains('on'));
+  const done = document.querySelectorAll('.chk.on').length;
+  document.getElementById('done-count').textContent = done;
+  document.getElementById('progress-bar').style.width = Math.round((done/TOTAL)*100) + '%';
+}
+function filterDay(day, btn) {
+  document.querySelectorAll('.db').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.ds').forEach(s => {
+    s.style.display = (day==='all' || s.dataset.day===day) ? 'block' : 'none';
+  });
+}
+</script>
+</body>
+</html>
