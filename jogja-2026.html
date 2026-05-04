@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Itinerary Jogja — Aji | 19–22 Mei 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FAF8F5;--warm:#FFFDF9;
+  --green:#0F6E56;--green-l:#E1F5EE;--green-m:#5DCAA5;
+  --blue:#185FA5;--blue-l:#E6F1FB;--blue-m:#85B7EB;
+  --amber:#854F0B;--amber-l:#FAEEDA;--amber-m:#EF9F27;
+  --mauve:#534AB7;--mauve-l:#EEEDFE;--mauve-m:#AFA9EC;
+  --brn:#3D2B1F;--brn2:#7A5C4A;--mut:#A08C7D;--bdr:#EDE9E3;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:var(--brn);min-height:100vh;}
+
+.app-header{background:var(--warm);border-bottom:1px solid var(--bdr);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(61,43,31,.06);}
+.hi{max-width:680px;margin:0 auto;padding:16px 20px 0;}
+.ht{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:14px;}
+.flag{font-size:20px;margin-bottom:4px;}
+.ttl{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;}
+.sub{font-size:12px;color:var(--mut);margin-top:3px;}
+.hbadge{background:var(--green-l);color:var(--green);font-size:11px;font-weight:700;padding:6px 12px;border-radius:20px;white-space:nowrap;}
+.tabs{display:flex;border-top:1px solid var(--bdr);overflow-x:auto;}
+.tabs::-webkit-scrollbar{display:none;}
+.tab{padding:11px 16px;font-size:13px;font-weight:600;color:var(--mut);border-bottom:2.5px solid transparent;cursor:pointer;transition:all .2s;white-space:nowrap;flex-shrink:0;user-select:none;}
+.tab.active{color:var(--green);border-bottom-color:var(--green);}
+.tab:hover:not(.active){color:var(--brn2);}
+
+.body{max-width:680px;margin:0 auto;padding:20px 16px 60px;}
+.page{display:none;}.page.active{display:block;}
+
+.sg{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px;margin-bottom:12px;}
+.sc{background:var(--warm);border:1px solid var(--bdr);border-radius:14px;padding:12px 10px;text-align:center;}
+.sn{font-size:20px;font-weight:700;font-family:'Playfair Display',serif;color:var(--brn);}
+.sl{font-size:10px;color:var(--mut);margin-top:3px;font-weight:500;}
+.bc{background:var(--warm);border:1px solid var(--bdr);border-radius:14px;padding:14px 16px;text-align:center;margin-bottom:18px;}
+.bn{font-size:20px;font-weight:700;color:var(--green);font-family:'Playfair Display',serif;}
+.bl{font-size:11px;color:var(--mut);margin-top:3px;}
+.pw{background:var(--bdr);border-radius:10px;height:6px;margin-bottom:18px;overflow:hidden;}
+.pb{height:100%;background:linear-gradient(90deg,var(--green),var(--green-m));border-radius:10px;transition:width .4s;width:0%;}
+.df{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-bottom:20px;scrollbar-width:none;}
+.df::-webkit-scrollbar{display:none;}
+.db{padding:8px 14px;border-radius:22px;font-size:12px;font-weight:700;border:1.5px solid var(--bdr);background:var(--warm);color:var(--mut);cursor:pointer;white-space:nowrap;flex-shrink:0;transition:all .2s;font-family:'Plus Jakarta Sans',sans-serif;}
+.db:hover{border-color:var(--green);color:var(--green);}
+.db.active{background:var(--green);color:#fff;border-color:var(--green);}
+
+.ds{margin-bottom:24px;border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(61,43,31,.07);}
+.dh{padding:14px 18px;display:flex;justify-content:space-between;align-items:flex-start;gap:12px;}
+.d1 .dh{background:var(--green);}
+.d2 .dh{background:#185FA5;}
+.d3 .dh{background:var(--amber);}
+.d4 .dh{background:var(--mauve);}
+.dt{font-size:14px;font-weight:700;color:#fff;line-height:1.3;}
+.ds2{font-size:11px;color:rgba(255,255,255,.75);margin-top:3px;font-style:italic;line-height:1.4;}
+.dbg{font-size:13px;font-weight:700;color:rgba(255,255,255,.9);white-space:nowrap;background:rgba(0,0,0,.15);padding:4px 10px;border-radius:10px;flex-shrink:0;}
+.dhi{padding:9px 18px;font-size:12px;font-style:italic;border-left:3px solid;}
+.d1 .dhi{background:#F0FBF8;color:var(--green);border-color:var(--green-m);}
+.d2 .dhi{background:var(--blue-l);color:var(--blue);border-color:var(--blue-m);}
+.d3 .dhi{background:var(--amber-l);color:var(--amber);border-color:var(--amber-m);}
+.d4 .dhi{background:var(--mauve-l);color:var(--mauve);border-color:var(--mauve-m);}
+
+.at{background:var(--warm);}
+.ah{display:grid;grid-template-columns:32px 82px 1fr 90px;padding:8px 14px;background:#F7F4F0;border-bottom:1px solid var(--bdr);}
+.ah span{font-size:10px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.6px;}
+.ar{display:grid;grid-template-columns:32px 82px 1fr 90px;padding:11px 14px;border-bottom:1px solid #F5F0EB;align-items:start;transition:background .15s;}
+.ar:last-child{border-bottom:none;}
+.ar:hover{background:#FDFAF7;}
+.ar.done-row{opacity:.5;}
+.ar.done-row .an{text-decoration:line-through;}
+.chk{width:18px;height:18px;border-radius:5px;border:1.5px solid #D0C5BB;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;transition:all .2s;user-select:none;}
+.chk:hover{border-color:var(--green);}
+.chk.on{background:var(--green);border-color:var(--green);}
+.chk.on::after{content:'✓';font-size:11px;color:#fff;font-weight:700;}
+.tm{font-size:11px;color:var(--mut);font-weight:600;line-height:1.5;padding-right:6px;}
+.an{font-size:13px;font-weight:600;color:var(--brn);line-height:1.4;margin-bottom:4px;}
+.badge{display:inline-block;padding:2px 8px;border-radius:8px;font-size:10px;font-weight:700;}
+.b-run{background:#EAF3DE;color:#3B6D11;}
+.b-eat{background:#FEF0E6;color:#B84A00;}
+.b-cafe{background:#FBEAF0;color:#8B3060;}
+.b-wisata{background:#EEEDFE;color:#4A3DAA;}
+.b-spa{background:#E1F5EE;color:#0F6E56;}
+.b-hotel{background:#E6F1FB;color:#185FA5;}
+.b-dinner{background:#FAEEDA;color:#854F0B;}
+.est{font-size:12px;font-weight:700;text-align:right;line-height:1.5;}
+.est.fr{color:#2E6B2E;}
+.est.da{color:var(--mut);}
+.est.pd{color:#993C1D;}
+.grab-note{font-size:10px;color:var(--mut);margin-top:2px;}
+
+.total-bar{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:#F7F4F0;border-top:1px solid var(--bdr);}
+.total-lbl{font-size:11px;font-weight:600;color:var(--mut);}
+.total-val{font-size:13px;font-weight:700;color:#993C1D;}
+
+.stitle{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--brn);margin:24px 0 14px;}
+.clbl{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:5px 14px;border-radius:20px;margin-bottom:12px;}
+.cjog{background:var(--green-l);color:var(--green);}
+.dc{background:var(--warm);border:1px solid var(--bdr);border-radius:14px;padding:14px 16px;margin-bottom:10px;display:flex;align-items:flex-start;gap:14px;}
+.di{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;background:var(--green-l);}
+.dn{font-size:14px;font-weight:700;color:var(--brn);margin-bottom:3px;}
+.dd{font-size:12px;color:var(--mut);line-height:1.5;}
+.dm{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap;align-items:center;}
+.dtag{font-size:10px;font-weight:700;padding:2px 8px;border-radius:8px;background:var(--cream);color:var(--brn2);border:1px solid var(--bdr);}
+.dtag.fr{background:#EBF5EB;color:#2E6B2E;border-color:#C0DEC0;}
+.dtag.grab{background:#F1EFE8;color:#444441;border-color:#D3D1C7;}
+.dday{font-size:10px;font-weight:700;color:var(--mut);white-space:nowrap;margin-left:auto;}
+
+.ot{background:var(--warm);border:1px solid var(--bdr);border-radius:14px;overflow:hidden;margin-bottom:20px;}
+.oh{display:grid;grid-template-columns:1fr 110px;padding:8px 14px;background:#F7F4F0;border-bottom:1px solid var(--bdr);}
+.oh span{font-size:10px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.6px;}
+.or{display:grid;grid-template-columns:1fr 110px;padding:11px 14px;border-bottom:1px solid #F5F0EB;align-items:start;}
+.or:last-child{border-bottom:none;}
+.or:hover{background:#FDFAF7;}
+.on2{font-size:13px;font-weight:600;color:var(--brn);margin-bottom:3px;}
+.ono{font-size:11px;color:var(--mut);line-height:1.4;}
+.op{font-size:12px;font-weight:700;color:#993C1D;text-align:right;}
+.op.fr{color:#2E6B2E;}
+.tip{background:var(--green-l);border-left:3px solid var(--green);border-radius:0 10px 10px 0;padding:10px 14px;font-size:12px;color:var(--green);line-height:1.6;margin-bottom:20px;}
+
+.footer{text-align:center;margin-top:32px;padding-top:20px;border-top:1px solid var(--bdr);font-size:12px;color:var(--mut);}
+.footer strong{color:var(--green);}
+
+@media(max-width:520px){
+  .ah,.ar{grid-template-columns:28px 68px 1fr 80px;}
+  .an{font-size:12px;}.tm{font-size:10px;}.ttl{font-size:17px;}
+  .tab{padding:11px 12px;font-size:12px;}
+  .sg{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<div class="app-header">
+  <div class="hi">
+    <div class="ht">
+      <div>
+        <div class="flag">🏔️ ☕ 🌿</div>
+        <div class="ttl">Solo Trip Jogja</div>
+        <div class="sub">19 – 22 Mei 2026 &nbsp;·&nbsp; 4 Hari &nbsp;·&nbsp; Sleman & Kota Jogja</div>
+      </div>
+      <div class="hbadge">🏃 Aji Solo Exploring</div>
+    </div>
+    <div class="tabs">
+      <div class="tab active" onclick="switchTab(0)">📅 Itinerary</div>
+      <div class="tab" onclick="switchTab(1)">📍 Destinasi</div>
+      <div class="tab" onclick="switchTab(2)">💰 Biaya</div>
+    </div>
+  </div>
+</div>
+
+<div class="body">
+
+<!-- PAGE 0: ITINERARY -->
+<div class="page active" id="page-0">
+  <div class="sg">
+    <div class="sc"><div class="sn">4</div><div class="sl">Hari</div></div>
+    <div class="sc"><div class="sn">19</div><div class="sl">Aktivitas</div></div>
+    <div class="sc"><div class="sn" id="done-count">0</div><div class="sl">Selesai ✓</div></div>
+    <div class="sc"><div class="sn" style="color:var(--green);">3x</div><div class="sl">Lari Pagi</div></div>
+  </div>
+  <div class="bc"><div class="bn">Rp 1.183.000</div><div class="bl">Est. Total (transport, makan, wisata, pijat)</div></div>
+  <div class="pw"><div class="pb" id="progress-bar"></div></div>
+  <div class="df">
+    <button class="db active" onclick="filterDay('all',this)">Semua</button>
+    <button class="db" onclick="filterDay('d1',this)">D1 · Tiba</button>
+    <button class="db" onclick="filterDay('d2',this)">D2 · Kota Jogja</button>
+    <button class="db" onclick="filterDay('d3',this)">D3 · Merapi</button>
+    <button class="db" onclick="filterDay('d4',this)">D4 · Terakhir</button>
+  </div>
+
+  <!-- DAY 1 -->
+  <div class="ds d1" data-day="d1">
+    <div class="dh"><div><div class="dt">Day 1 | Selasa, 19 Mei · Tiba di Jogja</div><div class="ds2">Anggita: Registrasi & Uji Alat 10:00–16:00</div></div><div class="dbg">±Rp 115rb</div></div>
+    <div class="dhi">💡 Santai dulu hari ini — perjalanan panjang dari Jakarta. Anggita selesai sore.</div>
+    <div class="at">
+      <div class="ah"><span></span><span>Waktu</span><span>Kegiatan</span><span>Est. Biaya</span></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">Siang</div><div><div class="an">Check-in The Alana Hotel Yogyakarta</div><span class="badge b-hotel">Hotel</span></div><div class="est da">—</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">Sore</div><div><div class="an">Santai di pool / kamar hotel</div><span class="badge b-hotel">Hotel</span><div class="grab-note">Isi tenaga sebelum acara besok</div></div><div class="est fr">Gratis</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">19:00</div><div><div class="an">Makan malam berdua — Kopicham Urban Kopitiam</div><span class="badge b-eat">Makan</span><div class="grab-note">Nasi Lemak & Teh Tarik ala Malaysia! Rating 4.9 ⭐ · ~5 menit dari hotel</div></div><div class="est pd">~Rp 80rb</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">21:00</div><div><div class="an">Nongkrong di Machia Social Space</div><span class="badge b-cafe">Café</span><div class="grab-note">Matcha & dessert. Buka 24 jam! · Grab ±Rp 8rb</div></div><div class="est pd">~Rp 35rb</div></div>
+    </div>
+    <div class="total-bar"><div class="total-lbl">Total Day 1</div><div class="total-val">~Rp 115.000</div></div>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="ds d2" data-day="d2">
+    <div class="dh"><div><div class="dt">Day 2 | Rabu, 20 Mei · Solo Exploring Kota Jogja</div><div class="ds2">Anggita: Acara penuh 08:30–17:00</div></div><div class="dbg">±Rp 468rb</div></div>
+    <div class="dhi">💡 Jalan sendiri seharian ke pusat kota! Semua lokasi bisa dijangkau Grab.</div>
+    <div class="at">
+      <div class="ah"><span></span><span>Waktu</span><span>Kegiatan</span><span>Est. Biaya</span></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">07:30–08:30</div><div><div class="an">Lari pagi 1 jam</div><span class="badge b-run">Lari</span><div class="grab-note">Lari di area hotel / Jalan Palagan. Udara pagi Sleman sejuk!</div></div><div class="est fr">Gratis</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">08:30–09:30</div><div><div class="an">Sarapan di MAG MAG Kitchen & Groceries</div><span class="badge b-eat">Sarapan</span><div class="grab-note">Sarapan sehat & kopi. Rating 4.7 ⭐ · Grab ±Rp 8rb</div></div><div class="est pd">~Rp 50rb</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">10:00–11:00</div><div><div class="an">Titik Nol Kilometer Yogyakarta</div><span class="badge b-wisata">Wisata</span><div class="grab-note">Landmark ikonik Jogja, foto di bangunan kolonial. Rating 4.8 ⭐ · Grab ±Rp 30rb</div></div><div class="est fr">Gratis</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">11:00–12:00</div><div><div class="an">Makan siang — Gudeg Mbok Lindu</div><span class="badge b-eat">Makan</span><div class="grab-note">Gudeg paling legendaris di Jogja! Buka sampai jam 12. · Jalan kaki 300m</div></div><div class="est pd">~Rp 30rb</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">12:00–15:00</div><div><div class="an">Jalan-jalan & belanja di Jalan Malioboro</div><span class="badge b-wisata">Belanja</span><div class="grab-note">Batik, kerajinan, camilan khas Jogja</div></div><div class="est pd">~Rp 50rb</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">15:30–17:00</div><div><div class="an">Pijat relaksasi — The Bliz Premium Massage</div><span class="badge b-spa">Pijat</span><div class="grab-note">Rating 4.9 ⭐ — best massage di Jogja! · Grab ±Rp 35rb balik ke Palagan</div></div><div class="est pd">~Rp 100rb</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">18:30</div><div><div class="an">Dinner romantis bersama Anggita — Lukisan Bumi</div><span class="badge b-dinner">Dinner</span><div class="grab-note">Suasana alam, outdoor & indoor. Rating 4.6 ⭐ · Grab ±Rp 15rb</div></div><div class="est pd">~Rp 150rb</div></div>
+    </div>
+    <div class="total-bar"><div class="total-lbl">Total Day 2 (termasuk Grab ±Rp 88rb)</div><div class="total-val">~Rp 468.000</div></div>
+  </div>
+
+  <!-- DAY 3 -->
+  <div class="ds d3" data-day="d3">
+    <div class="dh"><div><div class="dt">Day 3 | Kamis, 21 Mei · Merapi & Alam Sleman</div><div class="ds2">Anggita: Acara penuh 07:30–21:00</div></div><div class="dbg">±Rp 387rb</div></div>
+    <div class="dhi">💡 Hari terpanjang Anggita — explore alam Sleman sampai lereng Merapi!</div>
+    <div class="at">
+      <div class="ah"><span></span><span>Waktu</span><span>Kegiatan</span><span>Est. Biaya</span></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">06:30–07:30</div><div><div class="an">Lari pagi 1 jam</div><span class="badge b-run">Lari</span><div class="grab-note">Mulai lebih pagi karena agenda padat hari ini!</div></div><div class="est fr">Gratis</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">07:30–08:30</div><div><div class="an">Sarapan — SGPC Bu Wiryo 1959</div><span class="badge b-eat">Sarapan</span><div class="grab-note">Sego pecel legendaris sejak 1959! Kadang ada gamelan live. · Grab ±Rp 12rb</div></div><div class="est pd">~Rp 25rb</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">09:30–12:00</div><div><div class="an">The Lost World Castle</div><span class="badge b-wisata">Wisata</span><div class="grab-note">Kastil Eropa berlatar Gunung Merapi! Tiket Rp 30.000 · Grab ±Rp 60rb (~25 km)</div></div><div class="est pd">~Rp 30rb</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">12:30–14:30</div><div><div class="an">Blue Lagoon Jogja</div><span class="badge b-wisata">Wisata</span><div class="grab-note">Pemandian air biru jernih! Tiket Rp 15rb termasuk minuman. · Ojek lokal ±Rp 20rb</div></div><div class="est pd">~Rp 15rb</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">14:30–15:30</div><div><div class="an">Makan siang di warung sekitar Blue Lagoon</div><span class="badge b-eat">Makan</span><div class="grab-note">Warung lokal terjangkau. · Grab ±Rp 35rb balik ke Palagan</div></div><div class="est pd">~Rp 30rb</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">16:00–17:30</div><div><div class="an">Pijat — Healing Hut Massage Center</div><span class="badge b-spa">Pijat</span><div class="grab-note">Rating SEMPURNA 5.0 ⭐! Dekat hotel. Wajib booking dulu!</div></div><div class="est pd">~Rp 100rb</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">17:30–21:00</div><div><div class="an">Desa Palagan — nunggu Anggita selesai</div><span class="badge b-cafe">Santai</span><div class="grab-note">Makan malam + nongkrong. Buka 24 jam, ada live music! Rating 4.7 ⭐</div></div><div class="est pd">~Rp 60rb</div></div>
+    </div>
+    <div class="total-bar"><div class="total-lbl">Total Day 3 (termasuk Grab ±Rp 127rb)</div><div class="total-val">~Rp 387.000</div></div>
+  </div>
+
+  <!-- DAY 4 -->
+  <div class="ds d4" data-day="d4">
+    <div class="dh"><div><div class="dt">Day 4 | Jumat, 22 Mei · Hari Terakhir di Jogja</div><div class="ds2">Anggita: Kunjungan Wisata 07:30–17:00</div></div><div class="dbg">±Rp 213rb</div></div>
+    <div class="dhi">💡 Santai di hotel & café sekitar Palagan sambil tunggu Anggita pulang dari wisata.</div>
+    <div class="at">
+      <div class="ah"><span></span><span>Waktu</span><span>Kegiatan</span><span>Est. Biaya</span></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">06:30–07:30</div><div><div class="an">Lari pagi 1 jam</div><span class="badge b-run">Lari</span><div class="grab-note">Lari pagi terakhir di Jogja — nikmati suasana pagi Sleman!</div></div><div class="est fr">Gratis</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">07:30–08:30</div><div><div class="an">Sarapan — Warung Pojok Mbak Yuni</div><span class="badge b-eat">Sarapan</span><div class="grab-note">Sayur lodeh & telor gimbal legendaris! · Grab ±Rp 25rb</div></div><div class="est pd">~Rp 20rb</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">09:00–12:00</div><div><div class="an">Santai di pool The Alana Hotel</div><span class="badge b-hotel">Hotel</span><div class="grab-note">Nikmati kolam renang sebelum check-out. Rating hotel 4.8 ⭐</div></div><div class="est fr">Gratis (fasilitas hotel)</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">13:00–16:00</div><div><div class="an">Ngopi di Coconut Coffee & Eatery</div><span class="badge b-cafe">Café</span><div class="grab-note">View sawah + pool + live music. Rating 4.8 ⭐ · Grab ±Rp 8rb</div></div><div class="est pd">~Rp 60rb</div></div>
+      <div class="ar"><div class="chk" onclick="tick(this)"></div><div class="tm">17:00+</div><div><div class="an">Dinner bersama Anggita — menutup trip Jogja!</div><span class="badge b-dinner">Dinner</span><div class="grab-note">Anggita selesai kunjungan wisata. Pilih resto favorit berdua!</div></div><div class="est pd">~Rp 100rb</div></div>
+    </div>
+    <div class="total-bar"><div class="total-lbl">Total Day 4 (termasuk Grab ±Rp 33rb)</div><div class="total-val">~Rp 213.000</div></div>
+  </div>
+  <div class="footer">Made with ❤️ by <strong>Jigita</strong> with Claude</div>
+</div>
+
+<!-- PAGE 1: DESTINASI -->
+<div class="page" id="page-1">
+  <div class="stitle">📍 Semua Destinasi</div>
+  <div class="clbl cjog">🏔️ Sekitar Hotel — Palagan, Sleman</div>
+  <div class="dc"><div class="di">☕</div><div style="flex:1"><div class="dn">Kopicham Urban Kopitiam</div><div class="dd">Masakan Malaysia autentik — Nasi Lemak, Teh Tarik, Kaya Toast. Unik karena konsepnya kopitiam ala KL ada di Jogja!</div><div class="dm"><span class="dtag">Rating 4.9 ⭐</span><span class="dtag grab">Grab ~Rp 8rb</span><span class="dday">D1 · 19:00</span></div></div></div>
+  <div class="dc"><div class="di">🌿</div><div style="flex:1"><div class="dn">Machia Social Space</div><div class="dd">Café matcha kekinian yang buka 24 jam. Cocok untuk nongkrong malam hari atau menunggu Anggita.</div><div class="dm"><span class="dtag">Rating 4.9 ⭐</span><span class="dtag">Buka 24 jam</span><span class="dday">D1 · 21:00</span></div></div></div>
+  <div class="dc"><div class="di">🌾</div><div style="flex:1"><div class="dn">MAG MAG Kitchen & Groceries</div><div class="dd">Sarapan sehat dengan suasana café yang nyaman. Ramai para cyclists tiap pagi hari Minggu.</div><div class="dm"><span class="dtag">Rating 4.7 ⭐</span><span class="dtag grab">Grab ~Rp 8rb</span><span class="dday">D2 · 08:30</span></div></div></div>
+  <div class="dc"><div class="di">💆</div><div style="flex:1"><div class="dn">The Bliz Premium Massage</div><div class="dd">Salah satu tempat pijat terbaik di Jogja — ada form preferensi sebelum sesi dimulai. Sangat profesional dan ada welcome drink!</div><div class="dm"><span class="dtag">Rating 4.9 ⭐</span><span class="dtag grab">Grab ~Rp 35rb</span><span class="dday">D2 · 15:30</span></div></div></div>
+  <div class="dc"><div class="di">🌳</div><div style="flex:1"><div class="dn">Lukisan Bumi Restaurant</div><div class="dd">Restoran dengan suasana alam yang indah — outdoor & indoor. Cocok untuk dinner romantis berdua bersama Anggita.</div><div class="dm"><span class="dtag">Rating 4.6 ⭐</span><span class="dtag grab">Grab ~Rp 15rb</span><span class="dday">D2 · 18:30</span></div></div></div>
+  <div class="dc"><div class="di">🎶</div><div style="flex:1"><div class="dn">Desa Palagan</div><div class="dd">Restoran homey dengan konsep desa. Buka 24 jam dan ada live music! Cocok menunggu Anggita selesai acara malam.</div><div class="dm"><span class="dtag">Rating 4.7 ⭐</span><span class="dtag">Buka 24 jam</span><span class="dday">D3 · 17:30</span></div></div></div>
+  <div class="dc"><div class="di">💆</div><div style="flex:1"><div class="dn">Healing Hut Massage Center</div><div class="dd">Spa tersembunyi dengan rating sempurna 5.0 ⭐! Ruangan private, terapis profesional, welcome drink sebelum sesi. Wajib booking dulu!</div><div class="dm"><span class="dtag">Rating 5.0 ⭐</span><span class="dtag">Dekat hotel</span><span class="dday">D3 · 16:00</span></div></div></div>
+  <div class="dc"><div class="di">☕</div><div style="flex:1"><div class="dn">Coconut Coffee & Eatery</div><div class="dd">Ngopi dengan view sawah, ada kolam renang dan live music. Tempat yang sempurna untuk WFA hari terakhir di Jogja.</div><div class="dm"><span class="dtag">Rating 4.8 ⭐</span><span class="dtag grab">Grab ~Rp 8rb</span><span class="dday">D4 · 13:00</span></div></div></div>
+  <div style="height:16px"></div>
+  <div class="clbl cjog">🏙️ Kota Yogyakarta</div>
+  <div class="dc"><div class="di">🏛️</div><div style="flex:1"><div class="dn">Titik Nol Kilometer Yogyakarta</div><div class="dd">Pusat kota Jogja yang ikonik — dikelilingi bangunan kolonial Belanda yang megah. Ramai dan hidup siang maupun malam.</div><div class="dm"><span class="dtag fr">Gratis</span><span class="dtag grab">Grab ~Rp 30rb</span><span class="dday">D2 · 10:00</span></div></div></div>
+  <div class="dc"><div class="di">🍲</div><div style="flex:1"><div class="dn">Gudeg Mbok Lindu</div><div class="dd">Gudeg paling legendaris di Jogja! Buka dari jam 06:30 tapi sering habis sebelum siang — datang tidak terlambat!</div><div class="dm"><span class="dtag">Rating 4.6 ⭐</span><span class="dtag">Dekat Malioboro</span><span class="dday">D2 · 11:00</span></div></div></div>
+  <div class="dc"><div class="di">🛍️</div><div style="flex:1"><div class="dn">Jalan Malioboro</div><div class="dd">Pusat belanja oleh-oleh Jogja — batik, kerajinan tangan, camilan, dan fashion. Berjalan kaki dari Titik Nol.</div><div class="dm"><span class="dtag fr">Gratis masuk</span><span class="dtag">Jalan kaki dari Titik Nol</span><span class="dday">D2 · 12:00</span></div></div></div>
+  <div class="dc"><div class="di">🥣</div><div style="flex:1"><div class="dn">SGPC Bu Wiryo 1959</div><div class="dd">Sego pecel terenak se-Jogja menurut banyak warga lokal! Konsisten sejak 1959, kadang ada pertunjukan gamelan & sinden.</div><div class="dm"><span class="dtag">Rating 4.3 ⭐</span><span class="dtag grab">Grab ~Rp 12rb</span><span class="dday">D3 · 07:30</span></div></div></div>
+  <div class="dc"><div class="di">🥣</div><div style="flex:1"><div class="dn">Warung Pojok Mbak Yuni</div><div class="dd">Sayur lodeh & telor gimbal yang sudah legendaris. Antrian panjang tapi worth it — murah dan enak banget!</div><div class="dm"><span class="dtag">Rating 4.6 ⭐</span><span class="dtag grab">Grab ~Rp 25rb</span><span class="dday">D4 · 07:30</span></div></div></div>
+  <div style="height:16px"></div>
+  <div class="clbl cjog">🏔️ Lereng Merapi — Sleman Utara</div>
+  <div class="dc"><div class="di">🏰</div><div style="flex:1"><div class="dn">The Lost World Castle</div><div class="dd">Kastil bergaya Eropa di lereng Gunung Merapi! Spot foto yang unik dengan latar gunung berapi aktif. Tiket hanya Rp 30.000.</div><div class="dm"><span class="dtag">Rating 4.3 ⭐</span><span class="dtag grab">Grab ~Rp 60rb</span><span class="dday">D3 · 09:30</span></div></div></div>
+  <div class="dc"><div class="di">🏊</div><div style="flex:1"><div class="dn">Blue Lagoon Jogja</div><div class="dd">Pemandian air biru jernih alami dengan suasana alam yang segar. Tiket Rp 15.000 sudah termasuk minuman pilihan!</div><div class="dm"><span class="dtag">Rating 4.3 ⭐</span><span class="dtag">Tiket Rp 15rb</span><span class="dday">D3 · 12:30</span></div></div></div>
+  <div class="footer">Made with ❤️ by <strong>Jigita</strong> with Claude</div>
+</div>
+
+<!-- PAGE 2: BIAYA -->
+<div class="page" id="page-2">
+  <div class="stitle">💰 Rincian Biaya</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">
+    <div class="sc"><div class="sn" style="font-size:18px;color:var(--green);">Rp 1,1jt</div><div class="sl">Est. Total</div></div>
+    <div class="sc"><div class="sn" style="font-size:18px;color:var(--green);">4 Hari</div><div class="sl">Durasi</div></div>
+  </div>
+  <div class="bc" style="margin-bottom:6px;"><div class="bn">~Rp 1.183.000</div><div class="bl">Total estimasi (transport + makan + wisata + pijat)</div></div>
+  <div class="tip" style="margin-bottom:20px;">⚠️ Hotel sudah diurus Anggita (termasuk acara). Estimasi ini hanya pengeluaran pribadi kamu selama 4 hari. Kurs Grab berdasarkan tarif standar Jogja.</div>
+
+  <div class="ot" style="margin-bottom:6px;">
+    <div class="oh" style="background:var(--green-l);"><span style="color:var(--green);">📅 Day 1 — Selasa 19 Mei · Tiba di Jogja</span><span style="color:var(--green);">Est. Biaya</span></div>
+    <div class="or"><div><div class="on2">Makan malam Kopicham (berdua)</div><div class="ono">Nasi Lemak, Teh Tarik, dll — dekat hotel</div></div><div class="op">~Rp 80.000</div></div>
+    <div class="or"><div><div class="on2">Nongkrong Machia Social Space</div><div class="ono">Matcha & dessert malam hari</div></div><div class="op">~Rp 35.000</div></div>
+    <div class="or" style="background:var(--green-l);"><div><div class="on2" style="color:var(--green);">Total Day 1</div></div><div class="op" style="font-size:13px;">~Rp 115.000</div></div>
+  </div>
+  <div class="tip" style="margin-bottom:20px;">💡 Grab hari ini minimal — Kopicham hanya ~5 menit dari hotel, bisa jalan kaki!</div>
+
+  <div class="ot" style="margin-bottom:6px;">
+    <div class="oh" style="background:var(--blue-l);"><span style="color:var(--blue);">📅 Day 2 — Rabu 20 Mei · Kota Jogja</span><span style="color:var(--blue);">Est. Biaya</span></div>
+    <div class="or"><div><div class="on2">Grab ke MAG MAG + Titik Nol + Malioboro</div><div class="ono">Grab x3: ±Rp 8rb + Rp 30rb + Rp 5rb</div></div><div class="op">~Rp 43.000</div></div>
+    <div class="or"><div><div class="on2">Sarapan MAG MAG Kitchen</div><div class="ono">Sarapan sehat + kopi</div></div><div class="op">~Rp 50.000</div></div>
+    <div class="or"><div><div class="on2">Gudeg Mbok Lindu</div><div class="ono">Makan siang legendaris dekat Malioboro</div></div><div class="op">~Rp 30.000</div></div>
+    <div class="or"><div><div class="on2">Belanja oleh-oleh Malioboro</div><div class="ono">Budget belanja opsional</div></div><div class="op">~Rp 50.000</div></div>
+    <div class="or"><div><div class="on2">Grab Malioboro → The Bliz</div><div class="ono">Balik ke area Palagan ~35 menit</div></div><div class="op">~Rp 35.000</div></div>
+    <div class="or"><div><div class="on2">The Bliz Premium Massage (1 jam)</div><div class="ono">Pijat relaksasi setelah jalan seharian</div></div><div class="op">~Rp 100.000</div></div>
+    <div class="or"><div><div class="on2">Grab ke Lukisan Bumi + dinner berdua</div><div class="ono">Grab ±Rp 15rb + makan malam romantis</div></div><div class="op">~Rp 165.000</div></div>
+    <div class="or" style="background:var(--blue-l);"><div><div class="on2" style="color:var(--blue);">Total Day 2</div></div><div class="op" style="font-size:13px;">~Rp 473.000</div></div>
+  </div>
+  <div class="tip" style="margin-bottom:20px;border-color:var(--blue-m);background:var(--blue-l);color:var(--blue);">💡 Titik Nol & Malioboro GRATIS masuk. Pengeluaran terbesar adalah pijat + dinner romantis berdua.</div>
+
+  <div class="ot" style="margin-bottom:6px;">
+    <div class="oh" style="background:var(--amber-l);"><span style="color:var(--amber);">📅 Day 3 — Kamis 21 Mei · Merapi & Alam</span><span style="color:var(--amber);">Est. Biaya</span></div>
+    <div class="or"><div><div class="on2">Grab ke SGPC Bu Wiryo</div><div class="ono">Hotel → SGPC ~5 km</div></div><div class="op">~Rp 12.000</div></div>
+    <div class="or"><div><div class="on2">Sarapan SGPC Bu Wiryo</div><div class="ono">Sego pecel legendaris sejak 1959</div></div><div class="op">~Rp 25.000</div></div>
+    <div class="or"><div><div class="on2">Grab ke The Lost World Castle</div><div class="ono">SGPC → Lost World Castle ~25 km</div></div><div class="op">~Rp 60.000</div></div>
+    <div class="or"><div><div class="on2">Tiket masuk The Lost World Castle</div><div class="ono">Spot foto berlatar Gunung Merapi</div></div><div class="op">~Rp 30.000</div></div>
+    <div class="or"><div><div class="on2">Ojek lokal → Blue Lagoon</div><div class="ono">Lost World Castle → Blue Lagoon ~10 km</div></div><div class="op">~Rp 20.000</div></div>
+    <div class="or"><div><div class="on2">Tiket masuk Blue Lagoon + minuman</div><div class="ono">Sudah termasuk 1 minuman pilihan!</div></div><div class="op">~Rp 15.000</div></div>
+    <div class="or"><div><div class="on2">Makan siang warung lokal</div><div class="ono">Warung di sekitar Blue Lagoon</div></div><div class="op">~Rp 30.000</div></div>
+    <div class="or"><div><div class="on2">Grab balik ke Palagan</div><div class="ono">Blue Lagoon → Healing Hut ~30 km</div></div><div class="op">~Rp 35.000</div></div>
+    <div class="or"><div><div class="on2">Healing Hut Massage (1 jam)</div><div class="ono">Rating sempurna 5.0 ⭐ — booking dulu!</div></div><div class="op">~Rp 100.000</div></div>
+    <div class="or"><div><div class="on2">Makan malam + nongkrong Desa Palagan</div><div class="ono">Sambil nunggu Anggita selesai jam 21:00</div></div><div class="op">~Rp 60.000</div></div>
+    <div class="or" style="background:var(--amber-l);"><div><div class="on2" style="color:var(--amber);">Total Day 3</div></div><div class="op" style="font-size:13px;">~Rp 387.000</div></div>
+  </div>
+  <div class="tip" style="margin-bottom:20px;border-color:var(--amber-m);background:var(--amber-l);color:var(--amber);">💡 Lari pagi mulai jam 06:30 agar agenda tidak terlambat. Grab di area Merapi bisa susah sinyal — pertimbangkan sewa ojek lokal untuk pindah-pindah spot.</div>
+
+  <div class="ot" style="margin-bottom:6px;">
+    <div class="oh" style="background:var(--mauve-l);"><span style="color:var(--mauve);">📅 Day 4 — Jumat 22 Mei · Hari Terakhir</span><span style="color:var(--mauve);">Est. Biaya</span></div>
+    <div class="or"><div><div class="on2">Grab ke Warung Pojok Mbak Yuni</div><div class="ono">Hotel → warung ~8 km</div></div><div class="op">~Rp 25.000</div></div>
+    <div class="or"><div><div class="on2">Sarapan Warung Pojok Mbak Yuni</div><div class="ono">Sayur lodeh & telor gimbal legendaris</div></div><div class="op">~Rp 20.000</div></div>
+    <div class="or"><div><div class="on2">Pool The Alana Hotel</div><div class="ono">Fasilitas hotel — sudah termasuk kamar</div></div><div class="op fr">Gratis</div></div>
+    <div class="or"><div><div class="on2">Grab ke Coconut Coffee + ngopi</div><div class="ono">Grab ±Rp 8rb + kopi & makanan</div></div><div class="op">~Rp 68.000</div></div>
+    <div class="or"><div><div class="on2">Dinner bersama Anggita</div><div class="ono">Menutup trip Jogja — pilih resto favorit berdua!</div></div><div class="op">~Rp 100.000</div></div>
+    <div class="or" style="background:var(--mauve-l);"><div><div class="on2" style="color:var(--mauve);">Total Day 4</div></div><div class="op" style="font-size:13px;">~Rp 213.000</div></div>
+  </div>
+
+  <div style="background:var(--warm);border:2px solid var(--green);border-radius:16px;padding:18px 16px;margin:8px 0 20px;">
+    <div style="font-size:11px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">Rekapitulasi Total</div>
+    <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--bdr);font-size:13px;"><span style="color:var(--brn2);">Day 1 — Selasa 19 Mei</span><span style="font-weight:700;">~Rp 115.000</span></div>
+    <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--bdr);font-size:13px;"><span style="color:var(--brn2);">Day 2 — Rabu 20 Mei</span><span style="font-weight:700;">~Rp 473.000</span></div>
+    <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--bdr);font-size:13px;"><span style="color:var(--brn2);">Day 3 — Kamis 21 Mei</span><span style="font-weight:700;">~Rp 387.000</span></div>
+    <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--bdr);font-size:13px;"><span style="color:var(--brn2);">Day 4 — Jumat 22 Mei</span><span style="font-weight:700;">~Rp 213.000</span></div>
+    <div style="display:flex;justify-content:space-between;padding:12px 0 0;font-size:15px;"><span style="font-weight:700;color:var(--green);">TOTAL KESELURUHAN</span><span style="font-weight:700;color:var(--green);font-size:16px;">~Rp 1.188.000</span></div>
+  </div>
+
+  <div class="footer">Made with ❤️ by <strong>Jigita</strong> with Claude</div>
+</div>
+
+</div>
+
+<script>
+const TOTAL = 19;
+const STORAGE_KEY = 'checklist-jogja-2026';
+
+function loadChecklist() {
+  const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+  document.querySelectorAll('.chk').forEach((el,i) => {
+    if (saved.includes(i)) { el.classList.add('on'); el.closest('.ar').classList.add('done-row'); }
+  });
+  updateStats();
+}
+function saveChecklist() {
+  const saved = [];
+  document.querySelectorAll('.chk').forEach((el,i) => { if(el.classList.contains('on')) saved.push(i); });
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+}
+function updateStats() {
+  const done = document.querySelectorAll('.chk.on').length;
+  document.getElementById('done-count').textContent = done;
+  document.getElementById('progress-bar').style.width = Math.round((done/TOTAL)*100) + '%';
+}
+function switchTab(idx) {
+  document.querySelectorAll('.tab').forEach((t,i) => t.classList.toggle('active', i===idx));
+  document.querySelectorAll('.page').forEach((p,i) => p.classList.toggle('active', i===idx));
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+function tick(el) {
+  el.classList.toggle('on');
+  el.closest('.ar').classList.toggle('done-row', el.classList.contains('on'));
+  updateStats(); saveChecklist();
+}
+function filterDay(day, btn) {
+  document.querySelectorAll('.db').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.ds').forEach(s => {
+    s.style.display = (day==='all' || s.dataset.day===day) ? 'block' : 'none';
+  });
+}
+window.addEventListener('DOMContentLoaded', loadChecklist);
+</script>
+</body>
+</html>
