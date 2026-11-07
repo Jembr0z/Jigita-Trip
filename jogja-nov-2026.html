@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jogja 14–15 Nov 2026 | Aji & Anggita</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F6F9F9;--card:#fff;--ink:#14323A;--mut:#6B8087;--bdr:#DCE7E8;--teal:#1F7A8C;--tl:#E2F1F4;--sun:#E8833A;--sl:#FCEBDD;--ok:#2E7D4F}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--ink)}
+header{background:var(--card);border-bottom:1px solid var(--bdr);position:sticky;top:0;z-index:9}
+.wrap{max-width:660px;margin:0 auto;padding:0 16px}
+.top{padding:16px 0 12px}
+h1{font-family:'Fraunces',serif;font-size:22px;line-height:1.2}
+.sub{font-size:12px;color:var(--mut);margin-top:4px}
+.tabs{display:flex;gap:4px;border-top:1px solid var(--bdr)}
+.tab{padding:11px 14px;font-size:13px;font-weight:600;color:var(--mut);border-bottom:2.5px solid transparent;cursor:pointer}
+.tab.on{color:var(--teal);border-color:var(--teal)}
+main{padding:18px 16px 56px}
+.page{display:none}.page.on{display:block}
+.sum{display:flex;gap:10px;margin-bottom:14px}
+.box{flex:1;background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:12px;text-align:center}
+.box b{display:block;font-family:'Fraunces',serif;font-size:19px;color:var(--teal)}
+.box span{font-size:11px;color:var(--mut)}
+.bar{height:6px;background:var(--bdr);border-radius:6px;overflow:hidden;margin-bottom:18px}
+.bar i{display:block;height:100%;width:0;background:var(--sun);transition:width .3s}
+.day{background:var(--card);border:1px solid var(--bdr);border-radius:14px;overflow:hidden;margin-bottom:18px}
+.dh{padding:14px 16px;background:var(--teal);color:#fff;display:flex;justify-content:space-between;gap:10px}
+.d2 .dh{background:var(--sun)}
+.dh b{font-size:14px}.dh small{display:block;font-size:11px;opacity:.85;margin-top:2px}
+.dh em{font-style:normal;font-weight:700;font-size:12px;white-space:nowrap}
+.note{padding:9px 16px;font-size:12px;background:var(--tl);color:var(--teal)}
+.d2 .note{background:var(--sl);color:#9A4F17}
+.r{display:grid;grid-template-columns:26px 78px 1fr 86px;gap:6px;padding:11px 14px;border-top:1px solid var(--bdr);align-items:start}
+.c{width:18px;height:18px;border:1.5px solid #B8C9CC;border-radius:5px;cursor:pointer;margin-top:1px}
+.c.on{background:var(--teal);border-color:var(--teal);position:relative}
+.c.on::after{content:'✓';color:#fff;font-size:11px;font-weight:700;position:absolute;left:3px;top:0}
+.r.done{opacity:.5}.r.done .n{text-decoration:line-through}
+.t{font-size:11px;color:var(--mut);font-weight:600;padding-top:2px}
+.n{font-size:13px;font-weight:600;line-height:1.35}
+.d{font-size:11px;color:var(--mut);margin-top:3px;line-height:1.4}
+.p{font-size:12px;font-weight:700;text-align:right;color:var(--sun)}
+.p.f{color:var(--ok)}.p.x{color:var(--mut)}
+.tot{display:flex;justify-content:space-between;padding:11px 16px;border-top:1px solid var(--bdr);background:#F1F6F7;font-size:12px;font-weight:700}
+.card{background:var(--card);border:1px solid var(--bdr);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+.card b{font-size:14px}.card p{font-size:12px;color:var(--mut);line-height:1.5;margin-top:3px}
+.card small{display:block;margin-top:6px;font-size:11px;font-weight:600;color:var(--teal)}
+.big{background:var(--card);border:2px solid var(--teal);border-radius:14px;padding:16px;text-align:center;margin:6px 0 14px}
+.big b{font-family:'Fraunces',serif;font-size:22px;color:var(--teal)}
+.big span{display:block;font-size:11px;color:var(--mut);margin-top:3px}
+.ft{text-align:center;font-size:12px;color:var(--mut);margin-top:28px}.ft b{color:var(--teal)}
+@media(max-width:520px){.r{grid-template-columns:24px 66px 1fr 70px}.tab{padding:11px 10px;font-size:12px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<div class="top"><h1>Jogja & Pulang ke Purwokerto</h1><div class="sub">Sabtu 14 – Minggu 15 Nov 2026 · Menginap di Jambuluwuk Malioboro</div></div>
+<div class="tabs"><div class="tab on" onclick="go(0)">Itinerary</div><div class="tab" onclick="go(1)">Destinasi</div><div class="tab" onclick="go(2)">Biaya</div></div>
+</div></header>
+<main class="wrap">
+
+<div class="page on" id="p0">
+<div class="sum"><div class="box"><b>2</b><span>Hari</span></div><div class="box"><b>17</b><span>Agenda</span></div><div class="box"><b id="dn">0</b><span>Selesai</span></div></div>
+<div class="bar"><i id="pb"></i></div>
+
+<div class="day d1">
+<div class="dh"><div><b>Sabtu, 14 Nov · Terbang & Kuliner</b><small>IU 312 · CGK T2E 08:30 → YIA 09:40 · PNR MLJFDH</small></div><em>±Rp 1,0–1,6 jt</em></div>
+<div class="note">Tiba di CGK ±06:30. Check-in tutup 08:00. Bagasi 10 kg, kabin 7 kg.</div>
+<div class="r"><div class="c" onclick="tk(this)"></div><div class="t">04:30</div><div><div class="n">Grab dari rumah ke CGK</div></div><div class="p">Rp 150–250rb</div></div>
+<div class="r"><div class="c" onclick="tk(this)"></div><div class="t">06:30</div><div><div class="n">Check-in di Terminal 2E, siap di gate 08:00</div></div><div class="p x">—</div></div>
+<div class="r"><div class="c" onclick="tk(this)"></div><div class="t">08:30–09:40</div><div><div class="n">Penerbangan IU 312 ke YIA</div></div><div class="p x">—</div></div>
+<div class="r"><div class="c" onclick="tk(this)"></div><div class="t">09:40–11:30</div><div><div class="n">Tiba di YIA, ambil bagasi, santai</div></div><div class="p x">—</div></div>
+<div class="r"><div class="c" onclick="tk(this)"></div><div class="t">±11:35</div><div><div class="n">KA Bandara YIA ke Stasiun Tugu</div><div class="d">±40 menit, Rp 20rb/orang. Cek jadwal terbaru di KAI Access.</div></div><div class="p">Rp 40rb</div></div>
+<div class="r"><div class="c" onclick="tk(this)"></div><div class="t">12:30</div><div><div class="n">Grab ke Jambuluwuk, titip tas / early check-in</div></div><div class="p">Rp 20–30rb</div></div>
+<div class="r"><div class="c" onclick="tk(this)"></div><div class="t">13:15</div><div><div class="n">Makan siang Kurnia Seafood</div><div class="d">Pilih seafood dari tank. Reservasi disarankan. Termasuk Grab dari hotel.</div></div><div class="p">Rp 275–440rb</div></div>
+<div class="r"><div class="c" onclick="tk(this)"></div><div class="t">15:00</div><div><div class="n">Kembali ke hotel, check-in, istirahat</div></div><div class="p">Rp 25–40rb</div></div>
+<div class="r"><div class="c" onclick="tk(this)"></div><div class="t">15:30</div><div><div class="n">Carter mobil ke Pantai Baru, lanjut Sate Joglo, balik hotel</div><div class="d">Pantai Baru ±1,5 jam dari kota dan Grab susah dicari saat pulang. Nego harga carter dulu.</div></div><div class="p">Rp 400–600rb</div></div>
+<div class="r"><div class="c" onclick="tk(this)"></div><div class="t">17:00</div><div><div class="n">Sunset di Pantai Baru</div><div class="d">Sunset ±17:30. Ombak besar, jangan berenang.</div></div><div class="p">Rp 40–80rb</div></div>
+<div class="r"><div class="c" onclick="tk(this)"></div><div class="t">19:30</div><div><div class="n">Makan malam Sate Joglo Simpang Lima (Pleret)</div><div class="d">Sate klatak, gulai, tongseng. Buka 15:00–23:00.</div></div><div class="p">Rp 50–100rb</div></div>
+<div class="r"><div class="c" onclick="tk(this)"></div><div class="t">21:00</div><div><div class="n">Kembali ke hotel, istirahat</div></div><div class="p x">—</div></div>
+<div class="tot"><span>Total hari 1</span><span>Rp 1.000–1.580rb</span></div>
+</div>
+
+<div class="day d2">
+<div class="dh"><div><b>Minggu, 15 Nov · Brunch & Kereta</b><small>Kereta ke Purwokerto ±13:00 dari Stasiun Yogyakarta (Tugu)</small></div><em>±Rp 180–320rb</em></div>
+<div class="note">Tiba di Stasiun Tugu ±12:00. Kalau sarapan hotel sudah termasuk, makan ringan saja agar muat brunch.</div>
+<div class="r"><div class="c" onclick="tk(this)"></div><div class="t">07:30</div><div><div class="n">Jalan pagi di Malioboro dan sekitar hotel</div></div><div class="p f">Gratis</div></div>
+<div class="r"><div class="c" onclick="tk(this)"></div><div class="t">09:00</div><div><div class="n">Check-out, Grab ke Tengkleng Gajah</div><div class="d">Buka 09:00. Datang pagi sebelum Minggu siang ramai.</div></div><div class="p">Rp 40–60rb</div></div>
+<div class="r"><div class="c" onclick="tk(this)"></div><div class="t">09:45</div><div><div class="n">Brunch Tengkleng Gajah</div><div class="d">Porsi besar, nasi free flow.</div></div><div class="p">Rp 100–200rb</div></div>
+<div class="r"><div class="c" onclick="tk(this)"></div><div class="t">11:00</div><div><div class="n">Grab ke Stasiun Tugu</div></div><div class="p">Rp 40–60rb</div></div>
+<div class="r"><div class="c" onclick="tk(this)"></div><div class="t">12:00–13:00</div><div><div class="n">Tiba di stasiun, naik kereta ke Purwokerto</div><div class="d">Tiket kereta tidak masuk estimasi.</div></div><div class="p x">—</div></div>
+<div class="tot"><span>Total hari 2</span><span>Rp 180–320rb</span></div>
+</div>
+<div class="ft">Dibuat dengan ❤️ oleh <b>Jigita</b> with Claude</div>
+</div>
+
+<div class="page" id="p1">
+<div class="card"><b>Kurnia Seafood</b><p>Restoran seafood konsep pasar: pilih ikan, kerang, kepiting, atau lobster langsung dari tank. Jl. Laksda Adisucipto No.48B, Depok, Sleman.</p><small>14 Nov · 13:15 · Sabtu buka 11:00–22:00</small></div>
+<div class="card"><b>Pantai Baru</b><p>Pantai pasir hitam di Srandakan, Bantul, dengan pohon rindang dan sunset cantik. Biasanya lebih sepi di hari Sabtu dibanding Minggu.</p><small>14 Nov · 17:00 · Ombak besar, jangan berenang</small></div>
+<div class="card"><b>Sate Joglo Simpang Lima "Kang Ustadzi"</b><p>Sate kambing di bangunan joglo, Pleret, Bantul. Andalan: sate klatak, gulai, dan tongseng daging.</p><small>14 Nov · 19:30 · Buka 15:00–23:00</small></div>
+<div class="card"><b>Tengkleng Gajah</b><p>Tengkleng dan iga bakar porsi besar, halal, nasi free flow, ada live music. Jl. Kaliurang Timur No.9, Sleman.</p><small>15 Nov · 09:45 · Buka 09:00–21:00</small></div>
+<div class="card"><b>Jambuluwuk Malioboro Hotel</b><p>Jl. Gajah Mada No.67, dekat Malioboro. Ada kolam renang, gym, dan spa.</p><small>Menginap 14–15 Nov</small></div>
+<div class="ft">Dibuat dengan ❤️ oleh <b>Jigita</b> with Claude</div>
+</div>
+
+<div class="page" id="p2">
+<div class="big"><b>±Rp 1,2 – 1,9 juta</b><span>Estimasi total, di luar tiket pesawat, hotel, dan tiket kereta ke Purwokerto</span></div>
+<div class="card"><b>Sabtu, 14 Nov</b><p>Transport (Grab, kereta, carter): Rp 635–1.000rb</p><p>Makan (Kurnia Seafood, Sate Joglo): Rp 300–500rb</p><p>Tiket masuk & jajan Pantai Baru: Rp 40–80rb</p><small>Total Rp 1.000–1.580rb</small></div>
+<div class="card"><b>Minggu, 15 Nov</b><p>Transport (Grab ke Tengkleng Gajah dan Tugu): Rp 80–120rb</p><p>Makan (Tengkleng Gajah): Rp 100–200rb</p><small>Total Rp 180–320rb</small></div>
+<div class="card"><b>Sudah dibayar</b><p>Tiket IU 312 CGK → YIA, 2 penumpang (Rp 1.688.360) dan hotel Jambuluwuk.</p></div>
+<div class="ft">Semua angka perkiraan. Dibuat dengan ❤️ oleh <b>Jigita</b> with Claude</div>
+</div>
+
+</main>
+<script>
+var K='checklist-jogja-nov-2026',T=17;
+function go(i){document.querySelectorAll('.tab').forEach(function(t,j){t.classList.toggle('on',i==j)});document.querySelectorAll('.page').forEach(function(p,j){p.classList.toggle('on',i==j)});window.scrollTo(0,0)}
+function up(){var n=document.querySelectorAll('.c.on').length;document.getElementById('dn').textContent=n;document.getElementById('pb').style.width=Math.round(n/T*100)+'%'}
+function tk(e){e.classList.toggle('on');e.closest('.r').classList.toggle('done',e.classList.contains('on'));var s=[];document.querySelectorAll('.c').forEach(function(x,i){if(x.classList.contains('on'))s.push(i)});try{localStorage.setItem(K,JSON.stringify(s))}catch(x){}up()}
+(function(){var s=[];try{s=JSON.parse(localStorage.getItem(K)||'[]')}catch(x){}document.querySelectorAll('.c').forEach(function(x,i){if(s.indexOf(i)>-1){x.classList.add('on');x.closest('.r').classList.add('done')}});up()})();
+</script>
+</body>
+</html>
